@@ -1,11 +1,3 @@
-.hedding {
-  margin: 3.5rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.4rem;
-}
-
 .container {
   max-width: 98rem;
   margin: 0 auto;
