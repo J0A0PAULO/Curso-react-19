@@ -1,11 +1,14 @@
-import React from 'react';
 import styles from './Heading.module.css';
 
-export const Heading: React.FC = ({ children }) => {
+type HeadingProps = {
+  children: React.ReactNode;
+}
+
+export function Heading({ children }: HeadingProps) {
   console.log(styles);
   return (
     <>
-      <h1 className={styles.azul}>{children}</h1>
+      <h1 className={styles.hedding}>{children}</h1>
     </>
   );
 };
