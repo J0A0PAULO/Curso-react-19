@@ -1,20 +1,20 @@
-.menu {
+.Menu {
   display: flex;
   align-items: center;
   justify-content: center;
-    padding-top: 6.4rem;
+  gap: 1.6rem;
+  
 }
 
 .MenuLink {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem;
-  flex-direction: column;
-  font-size: 4.2rem;
-  font-weight: bold;
   text-decoration: none;
-  color: var(--primary);
+  background: var(--primary);
+  color:  var(--tex-over-primary);
+  padding: 1rem;
+  border-radius: 0.8rem;
   transition: all 0.1s ease;
 }
 
@@ -22,7 +22,7 @@
   filter: brightness(80%);
 }
 
-.Menulink svg {
-  width: 6.4rem;
-  height: 6.4rem;
+.MenuLink svg {
+  width: 2.4rem;
+  height: 2.4rem;
 }

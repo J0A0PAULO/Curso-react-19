@@ -25,3 +25,17 @@ body {
   background: var(--gray-900);
   color: var(--text-default);
 }
+
+.form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.4rem;
+  
+}
+.formRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
