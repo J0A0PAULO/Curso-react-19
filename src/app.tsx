@@ -1,48 +1,27 @@
-import { PlayCircleIcon } from 'lucide-react';
-import { Container } from './components/container/Container';
-import { CountDown } from './components/countDown/CountDown';
-import { Cycles } from './components/cycles/Cycles';
-import { DefaultButton } from './components/defaultButton/defaultButton';
-import { DefaultInput } from './components/defaultInput/DefaultInput';
-import { Footer } from './components/footer/Footer';
-
-import { Logo } from './components/logo/Logo';
-import { Menu } from './components/menu/Menu';
+import { useState } from 'react';
+import type { TaskStartModel } from './models/taskStateModel';
+import { Home } from './pages/homes/Home';
 import './styles/global.css';
 import './styles/theme.css';
 
-export function App() {
+const initialState: TaskStartModel = {
+  tasks: [],
+  secondsRemaining: 0,
+  formattedSecondsRemaning: '00:00',
+  activeTask: null,
+  currentCyCle: 0,
+  config: {
+    workTime: 25,
+    shortBreakTime: 5,
+    longBreakTime: 15
+  }
+}
 
+export function App() {
+  const [state, setState] = useState(initialState);
   return (
     <>
-      <Container>
-        <Logo></Logo>
-      </Container>
-      <Container>
-        <Menu></Menu>
-      </Container >
-      <Container>
-        <CountDown></CountDown>
-      </Container>
-      <Container>
-        <form action="" className='form'>
-          <div className="formRow">
-            <DefaultInput labelText='task' id='meuId' type='text' placeholder='Digite Algo'></DefaultInput>
-          </div>
-          <div className="formRow">
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div className="formRow">
-            <Cycles></Cycles>
-          </div>
-          <div className="formRow">
-            <DefaultButton icon={<PlayCircleIcon />} color='green' />
-          </div>
-        </form>
-      </Container>
-      <Container>
-        <Footer></Footer>
-      </Container>
+      <Home state={state} setState={setState} />;
     </>
   );
 }
